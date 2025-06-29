@@ -330,3 +330,244 @@ html {
     background: #2563eb;
     color: white;
 }
+
+/* Side Panel Styles */
+.sidepanel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    border-left: 1px solid #e2e8f0;
+}
+
+.sidepanel.open {
+    right: 0;
+}
+
+.sidepanel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #2563eb;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.sidepanel-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.sidepanel-content {
+    padding: 1rem;
+}
+
+.discussion-section,
+.page-info-section,
+.extension-features {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.discussion-section h4,
+.page-info-section h4,
+.extension-features h4 {
+    margin-bottom: 1rem;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.selected-text {
+    background: #f1f5f9;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 3px solid #2563eb;
+}
+
+.selected-text strong {
+    color: #2563eb;
+}
+
+.comments-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.comment {
+    background: #f8fafc;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #2563eb;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.comment-text {
+    color: #374151;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.comment-time {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.comment-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#commentInput {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+}
+
+#commentInput:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.add-comment-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.add-comment-btn:hover {
+    background: #1d4ed8;
+}
+
+.page-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.page-details strong {
+    color: #1e293b;
+}
+
+.feature-btn {
+    display: block;
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.feature-btn:hover {
+    background: #e2e8f0;
+    border-color: #2563eb;
+}
+
+.feature-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive adjustments for sidepanel */
+@media (max-width: 768px) {
+    .sidepanel {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .extension-button {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+    }
+}
+
+/* Highlight mode styles */
+.highlight-mode .selectable-content {
+    cursor: crosshair;
+}
+
+.highlighted-text {
+    background: rgba(37, 99, 235, 0.2);
+    border-radius: 2px;
+    padding: 1px 2px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.highlighted-text:hover {
+    background: rgba(37, 99, 235, 0.3);
+}

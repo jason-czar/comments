@@ -106,6 +106,57 @@
         </div>
     </footer>
 
+    <!-- Mock Extension Side Panel -->
+    <div id="sidepanel" class="sidepanel">
+        <div class="sidepanel-header">
+            <h3>Sidenote</h3>
+            <button id="closeSidepanel" class="close-btn">&times;</button>
+        </div>
+        <div class="sidepanel-content">
+            <div class="discussion-section">
+                <h4>Discussion</h4>
+                <div class="selected-text" id="selectedText" style="display: none;">
+                    <strong>Selected:</strong> <span id="selectedTextContent"></span>
+                </div>
+                <div class="comments-container">
+                    <div class="comment">
+                        <div class="comment-author">User1</div>
+                        <div class="comment-text">This is a great point about extension development!</div>
+                        <div class="comment-time">2 minutes ago</div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-author">Developer</div>
+                        <div class="comment-text">Thanks for testing the extension. How's the user experience?</div>
+                        <div class="comment-time">5 minutes ago</div>
+                    </div>
+                </div>
+                <div class="comment-input-section">
+                    <textarea id="commentInput" placeholder="Add your thoughts about this page..."></textarea>
+                    <button id="addComment" class="add-comment-btn">Add Comment</button>
+                </div>
+            </div>
+            
+            <div class="page-info-section">
+                <h4>Page Info</h4>
+                <div class="page-details">
+                    <p><strong>URL:</strong> <span id="currentUrl"></span></p>
+                    <p><strong>Title:</strong> <span id="pageTitle"></span></p>
+                    <p><strong>Comments:</strong> <span id="commentCount">2</span></p>
+                </div>
+            </div>
+            
+            <div class="extension-features">
+                <h4>Features</h4>
+                <button class="feature-btn" id="highlightMode">Highlight Mode</button>
+                <button class="feature-btn" id="shareDiscussion">Share Discussion</button>
+                <button class="feature-btn" id="exportComments">Export Comments</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for when sidepanel is open -->
+    <div id="overlay" class="overlay"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
