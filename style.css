@@ -97,6 +97,33 @@ header {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+.extension-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.extension-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 768px) {
+    .extension-button {
+        margin-left: 0;
+        margin-top: 1rem;
+        display: block;
+    }
+}
+
 /* Content Sections */
 .content-section {
     padding: 4rem 0;

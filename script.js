@@ -61,4 +61,30 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Text selected:', selection.toString());
         }
     });
+
+    // Open Sidenote extension side panel
+    const openSidenoteButton = document.getElementById('openSidenote');
+    if (openSidenoteButton) {
+        openSidenoteButton.addEventListener('click', function() {
+            // Try to open the side panel using Chrome extension API
+            if (typeof chrome !== 'undefined' && chrome.sidePanel) {
+                chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+            } else {
+                // Fallback: try to communicate with the extension
+                console.log('Attempting to open Sidenote extension...');
+                
+                // Send a message to the extension if it's listening
+                window.postMessage({ 
+                    type: 'OPEN_SIDENOTE_PANEL',
+                    source: 'test-website'
+                }, '*');
+                
+                // Show user feedback
+                this.textContent = 'Extension Opening...';
+                setTimeout(() => {
+                    this.textContent = 'Open Sidenote Extension';
+                }, 2000);
+            }
+        });
+    }
 });
